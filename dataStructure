@@ -1,0 +1,74 @@
+Nodes:
+* Players
+* Teams
+* Seasons
+* Managers
+* League (For now we can focus on the EPL)
+* Matches? or is an edge between Seasons and the team playing enough?
+Might be best to have Matches as a Node for easy stat lookup
+
+
+Hierarchical structure?
+                Season
+                /   \
+               /     \
+              /       \
+           League    League
+            /           \
+           /             \
+          /               \
+        Teams            Teams
+        /                   \
+       /                     \
+      /                       \
+    Players                  Players
+
+Unnecessary abstraction?
+
+
+Other ideas?
+
+Team -(current)-> player
+Team -(former)-> player
+Team -(plays_in)-> League
+Team -(played_in)-> LeagueB
+Team <-(match)- Season -(match)-> Team
+
+OR
+
+Team -(played_in)-> Match <-(played_in)- Team
+                      |
+                  (occurred_in)
+                      |
+                    Season
+
+Is this even possible? #noob
+
+Properties: #(A.K.A. (or "also known as") example: Robin Van Persie A.K.A. RvP, Judas)
+
+Players:
+Name,
+Date (birthday),
+Nationality,
+Height,
+A.K.A.,
+Position(s)
+
+Teams:
+Name,
+Founded,
+Stadium?, (create a stadium node?)
+A.K.A.,
+More?
+
+Matches:
+Matchday,
+Score,
+HomeSide?,
+AwaySide?,
+More? Less?
+
+Seasons:
+Season,
+TopScorers?,
+Awards?,
